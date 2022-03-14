@@ -1,0 +1,11 @@
+@use '@angular/material' as mat;
+@import "../../../../theme.scss";
+
+.home {
+    font-size: 25px;
+    padding-top: 16%;
+}
+
+.home a {
+    color: $p;
+}

@@ -1,0 +1,53 @@
+﻿<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <div class="mat-app-header mdl-layout__header mdl-layout__header--waterfall">
+    <div class="mdl-layout__header-row">
+      <span class="mat-app-title mdl-layout-title">
+        {{ theBaseOwner }} Apresenta: {{theClient}}
+      </span>
+      <!-- Add spacer, to align navigation to the right in desktop -->
+      <div class="mat-app-header-spacer mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <div class="mat-app-navigation-container">
+        <nav class="mat-app-navigation mdl-navigation">
+          <a class="fa fa-facebook mdl-navigation__link mdl-typography--text-uppercase"
+            href="{{ theFacebookOwner }}">&nbsp; &nbsp; FACEBOOK</a>
+          <a class="fa fa-instagram mdl-navigation__link mdl-typography--text-uppercase"
+            href="{{ theInstagranOwner }}">&nbsp; &nbsp; INSTAGRAM</a>
+        </nav>
+      </div>
+      <span class="mat-app-mobile-title mdl-layout-title ">
+        {{ theBaseOwner }} Apresenta: {{theClient}}
+      </span>
+    </div>
+  </div>
+  <div class="mat-app-drawer mdl-layout__drawer">
+    <span routerLink="" class="mdl-layout-title mdl-navigation__link">
+      <h3>{{ theBaseOwner }}</h3>
+    </span>
+    <div class="mat-app-drawer-separator"></div>
+    <nav class="mdl-navigation">
+      <a class="fa fa-facebook mdl-navigation__link" routerLink="/cursos">
+        FACEBOOK
+      </a>
+      <a class="fa fa-instagram mdl-navigation__link" routerLink="/turmas">
+        INSTAGRAN
+      </a>
+    </nav>
+  </div>
+  <div class="container mdl-layout__content">
+    <div class="mat-app-coverflow">
+      <div class="mat-app-section-card mdl-grid">
+        <div class="swiper-container swiper-coverflow-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-coverflow-slide " *ngFor="let a of getListImg(); let index = index"
+            style="background-image:url(../../../../assets/images/{{index + 1}}.jpg);">              
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination swiper-coverflow-pagination"></div>
+        </div>
+        <div class="cloud"></div>
+      </div>
+    </div>
+  </div>
+</div>

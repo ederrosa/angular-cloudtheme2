@@ -1,1 +1,536 @@
 /* You can add global styles to this file, and also import other style files */
+// Include non-theme styles for core.
+@use '@angular/material'as mat;
+@import 'theme.scss';
+
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+.container
+{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;    
+    background-color: #87ceeb;
+}
+
+.swiper 
+{
+    width: 100%;
+    height: 100%;
+}
+  
+.mat-app-coverflow 
+{
+    padding-top: 40px;
+    position   : relative;
+    width      : 100%;
+    height     : 100%;
+
+    .swiper-coverflow-container 
+    {
+        padding-top   : 25px;
+        padding-bottom: 35px;
+        width         : 100%;
+        height        : 100%;
+        margin-left     : auto;
+        margin-right    : auto;
+
+        .swiper-coverflow-slide 
+        {
+            background-size    : contain;
+            background-repeat  : no-repeat;
+            background-position: center;
+            width: 854px;
+            height: 480px;           
+            margin-left        : auto;
+            margin-right       : auto;
+            background-color: #87ceeb;
+            padding-top: 15px;           
+        }
+
+        .swiper-coverflow-pagination {}
+  
+    }
+}
+
+
+.mat-app-section-card 
+{
+
+    .mdl-card__media 
+    {
+        overflow  : hidden;
+        background: transparent;
+    }
+
+    .mdl-card__media img 
+    {
+        width     : 100%;
+       
+    }
+
+    .mdl-card__title 
+    {
+        background: transparent;
+        height    : auto;
+    }
+
+    .mdl-card__title-text 
+    {
+        color : $p;
+        height: min-content;
+    }
+
+    .mdl-card__supporting-text 
+    {
+        height        : min-content;
+        color         : $p;
+        padding-bottom: 56px;
+    }
+
+    .mdl-card__actions 
+    {
+        position: relative;
+        bottom  : 0;
+        height  : max-content;
+    }
+
+    .mdl-card__actions a 
+    {
+        border-top: none;
+        font-size : 16px;
+    }
+
+    .mdl-card__actions a:hover 
+    {
+        border-top      : none;
+        font-size       : 16px;
+        background-color: $p;
+        color           : $s;
+    }
+}
+
+.cloud
+{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(assets/themes/cloud.png);
+    background-size: cover;
+    animation: animate 60s linear infinite;
+    padding-top: 15px;
+    opacity: 0.9;
+}
+
+@keyframes animate 
+{
+    
+    0%
+    {
+        background-position: 0px;
+    }
+    100%
+    {
+        background-position: -5440px;
+    }
+}
+
+.mat-app-header 
+{
+    overflow        : visible;
+    background-color: $p;
+
+    .material-icons 
+    {
+        color: $s !important;
+    }
+
+    .mdl-menu__container 
+    {
+        z-index: 50;
+        margin : 0 !important;
+    }
+
+    .mdl-layout__drawer-button 
+    {
+        background: transparent;
+        color     : $s;
+    }
+
+    .mdl-navigation__link 
+    {
+        color      : $s;
+        font-weight: 700;
+        font-size  : 14px;
+    }
+
+    .title 
+    {
+        font-family: $fontPrimary;
+        color      : $s;
+    }
+}
+
+.mat-app-drawer .mdl-layout-title 
+{
+    position  : relative;
+    background: $p;
+    height    : 100px;
+}
+
+.mat-app-navigation-container 
+{
+    /* Simple hack to make the overflow happen to the left instead... */
+    direction     : rtl;
+    -webkit-order : 1;
+    -ms-flex-order: 1;
+    order         : 1;
+    width         : auto;
+    transition    : opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    .material-icons 
+    {
+        position      : relative;
+        top           : -1px;
+        vertical-align: middle;
+        color         : $s !important;
+    }
+}
+
+.mat-app-navigation 
+{
+    /* ... and now make sure the content is actually LTR */
+    direction              : ltr;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack          : end;
+    justify-content        : flex-end;
+    width                  : auto;
+}
+
+.mat-app-navigation a:hover 
+{
+    width        : auto;
+    align-content: center;
+    font-style   : oblique;
+    font-size    : 20px;
+    text-align   : center;
+}
+
+.mat-app-navigation .mdl-navigation__link 
+{
+    display         : inline-block;
+    height          : 50px;
+    line-height     : 58px;
+    background-color: transparent !important;
+    border-bottom   : 4px solid transparent;
+}
+
+.mat-app-navigation .mdl-navigation__link:hover 
+{
+    border-bottom: 4px solid $s;
+    color        : $s;
+
+    .material-icons 
+    {
+        color: $s !important;
+    }
+}
+
+.mat-app-drawer .mdl-navigation__link.mdl-navigation__link:hover 
+{
+    background-color: $s;
+    color           : $p;
+    font-size       : 18px;
+    font-family     : $fontSecondary;
+    text-transform  : capitalize;
+}
+
+.mat-app-drawer span.mdl-navigation__link.mdl-navigation__link 
+{
+    color: $s;
+}
+
+.mat-app-drawer .mat-app-logo-image 
+{
+    position: absolute;
+    bottom  : 16px;
+}
+
+.mat-app-drawer .material-icons :hover 
+{
+    color: $s !important;
+}
+
+.mdl-textfield--expandable 
+{
+    width: auto;
+}
+
+.mat-app-drawer .mdl-navigation__link.mdl-navigation__link 
+{
+    font-size: 14px;
+    color    : $s;
+}
+
+.mat-app-drawer 
+{
+    border-right    : none;
+    background-color: $p;
+}
+
+.mat-app-drawer-separator 
+{
+    height          : 2px;
+    background-color: $s;
+    margin          : 8px 0;
+}
+
+.mat-app-link 
+{
+    text-decoration: none;
+    color          : $p !important;
+}
+
+.mat-app-link:hover 
+{
+    color: $s !important;
+}
+
+.mat-app-link .material-icons 
+{
+    position      : relative;
+    top           : -1px;
+    vertical-align: middle;
+}
+
+.logo-font 
+{
+    font-family: $fontSecondary;
+    line-height: 1;
+    color      : $p;
+    font-weight: 500;
+}
+
+.mat-app-section-title 
+{
+    background-color: $p;
+    color           : $s;
+    font-family     : $fontPrimary;
+    margin-left     : auto;
+    margin-right    : auto;
+    padding-bottom  : 24px;
+    width           : max-content;
+    opacity         : 1;
+}
+
+.mat-app-link-menu:hover 
+{
+    cursor: pointer;
+}
+
+.mat-app-logo-image 
+{
+    height: 48px;
+    width : 130px;
+}
+
+.mat-app-logo-image-left-menu 
+{
+    height: 100px;
+    width : 200px;
+}
+
+.mat-app-more-button 
+{
+    -webkit-order : 3;
+    -ms-flex-order: 3;
+    order         : 3;
+}
+
+.mat-app-alt-link .material-icons 
+{
+    position: relative;
+    top     : 6px;
+}
+
+.mat-app-alt-link 
+{
+    text-decoration: none;
+    color          : mat.get-color-from-palette($warning) !important;
+    font-size      : 16px;
+}
+
+.mat-app-alt-link:hover 
+{
+    color: mat.get-color-from-palette($danger) !important;
+}
+
+.mat-app-title
+{
+    font-style: italic;
+    color:$s;
+}
+//#### FA ICONS ####
+.fa 
+{
+    padding        : 20px;
+    font-size      : 30px;
+    width          : auto;
+    text-align     : center;
+    text-decoration: none;
+    margin         : 5px 2px;
+}
+
+.fa:hover 
+{
+    padding        : 20px;
+    font-size      : 30px;
+    width          : auto;
+    text-align     : center;
+    text-decoration: none;
+    border-radius  : 50%;
+}
+
+.fa-google 
+{
+   
+    color     : white;
+}
+
+.fa-facebook 
+{
+   
+    color           : white;
+}
+
+.fa-instagram 
+{
+    
+    color           : white;
+}
+
+.fa-twitter 
+{
+    
+    color           : white;
+}
+
+.fa-youtube 
+{
+    
+    color           : white;
+}
+
+@media (max-width: 900px) 
+{
+    .mat-app-navigation-container 
+    {
+        display: none;
+    }
+
+    .mat-app-title 
+    {
+        display: none !important;
+    }
+
+    .mat-app-mobile-title 
+    {
+        display   : block !important;
+        position  : absolute;
+        left      : calc(50% - 70px);
+        top       : 12px;
+        transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10 break
+     consecutive "+" operators in some cases. Therefore, we need to use both
+     here to cover all the bases. */
+    .mat-app.mat-app-search-box.is-focused~.mat-app-mobile-title,
+    .mat-app-search-box.is-focused+.mat-app-navigation-container+.mat-app-mobile-title 
+    {
+        opacity: 0;
+    }
+
+    .mat-app-more-button 
+    {
+        display: none;
+    }
+
+    .mat-app-section 
+    {
+        height: 360px;
+    }
+
+    .mat-app-slogan 
+    {
+        font-size  : 26px;
+        margin     : 0 16px;
+        padding-top: 24px;
+    }
+
+    .mat-app-sub-slogan 
+    {
+        font-size  : 16px;
+        margin     : 0 16px;
+        padding-top: 8px;
+    }
+
+    .mat-app-fab 
+    {
+        display: none;
+    }
+
+    .mat-app-footer .mdl-mega-footer--bottom-section 
+    {
+        display: none;
+    }
+
+    .mat-app-coverflow 
+    {   
+       height: 360px;
+    }
+   
+    .mat-app-coverflow 
+    {
+        padding-top: 40px;
+        position   : relative;
+        width      : 100%;
+        height     : 100%;
+    
+        .swiper-coverflow-container 
+        {
+            padding-top   : 15px;
+            padding-bottom: 25px;
+            width         : 100%;
+            height        : 100%;
+            margin-left     : auto;
+            margin-right    : auto;
+    
+            .swiper-coverflow-slide 
+            {
+                background-size    : contain;
+                background-repeat  : no-repeat;
+                background-position: center;
+                width              : 600px;
+                height             : 320px;
+                margin-left        : auto;
+                margin-right       : auto;
+                background-color: #87ceeb;
+                padding-top: 15px;           
+            }
+    
+            .swiper-coverflow-pagination {}            
+        }
+    }
+    
+}

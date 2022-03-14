@@ -1,0 +1,31 @@
+@use '@angular/material'as mat;
+// Import library functions for theme creation.
+
+// Include non-theme styles for core.
+@include mat.core();
+
+// Define your application's custom theme.
+$primary  : mat.define-palette(mat.$grey-palette, 900);
+$secondary: mat.define-palette(mat.$grey-palette, 50);
+$success  : mat.define-palette(mat.$light-green-palette, A400);
+$info     : mat.define-palette(mat.$light-blue-palette, A400);
+$warning  : mat.define-palette(mat.$amber-palette, A400);
+$danger   : mat.define-palette(mat.$red-palette, A700, A400, A100);
+$black    : #000000;
+$white    : #ffffff;
+$p        : #ffffff; //Cor PRIMARIA aplicada ao tema da aplicação.
+$s        : #87ceeb; //Cor SECUNDARIA aplicada ao tema da aplicação.
+$tema     : $white; //Cor do tema dos componentes, baseado no tema escolhido,DARK || LIGHT
+
+$fontPrimary: Roboto,
+"Helvetica Neue",
+sans-serif;
+$fontSecondary: fantasy;
+
+$light: mat.define-palette(mat.$grey-palette, 50);
+$dark : mat.define-palette(mat.$grey-palette, 900);
+
+$theme: mat.define-light-theme($primary, $secondary, $danger);
+
+// Include theme styles for Angular Material components.
+@include mat.all-component-themes($theme);
